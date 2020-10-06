@@ -1,0 +1,82 @@
+<mvc:View controllerName="demo.zDemo1.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<l:VerticalLayout width="100%">
+							<fb:FilterBar search="onSearch">
+								<fb:filterItems>
+									<fb:FilterItem name="A" label="Sales ReqNo">
+										<fb:control>
+											<Input id="reqNo1"  />
+										</fb:control>
+									</fb:FilterItem>
+									<fb:FilterItem name="B" label="Sales Org">
+										<fb:control>
+											<Input id="salesorg1" />
+										</fb:control>
+									</fb:FilterItem>
+									<fb:FilterItem name="c" label="Distribution">
+										<fb:control>
+											<Input id="distibtn1" />
+										</fb:control>
+									</fb:FilterItem>
+									<fb:FilterItem name="d" label="Division">
+										<fb:control>
+											<Input id="dvsn1" />
+										</fb:control>
+									</fb:FilterItem>
+									<fb:FilterItem name="e" label="Spart">
+										<fb:control>
+											<Input id="sprt1"/>
+										</fb:control>
+									</fb:FilterItem>
+								</fb:filterItems>
+							</fb:FilterBar>
+						</l:VerticalLayout>
+						<Table id="tblsales" inset="false" visible="true" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true" width="auto"
+							growingThreshold="10" items="{/salesdocumentsSet}" noDataText="{i18n>nodatafound}">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="" level="H2"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column demandPopin="true">
+									<Text text="Sales ReqNo"/>
+								</Column>
+								<Column demandPopin="true">
+									<Text text="Sales Org"/>
+								</Column>
+								<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text="Distribution"/>
+								</Column>
+								<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text="Division"/>
+								</Column>
+								
+									<Column demandPopin="true" minScreenWidth="Tablet">
+									<Text text="spart"/>
+								</Column>
+								
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="{Mandt}"/>
+										<Text text="{Vbeln}"/>
+										<Text text="{Vkorg}"/>
+										<Text text="{Vtweg}"/>
+										<Text text="{Spart}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
